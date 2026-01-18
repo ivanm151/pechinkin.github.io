@@ -1,25 +1,25 @@
 const translations = {
     ru: {
-        greeting: 'ПРИВЕТ',
-        name: 'Я - ДАНЯ',
-        surname: 'ПЕЧИНКИН.',
-        intro: 'ЭТО МОЁ:',
-        dj: 'ДИДЖ',
-        resume: 'РЕЗЮМЕ',
-        youtube: 'ЮТУБ',
-        telegram: 'ТЕЛЕГРАМ',
-        email: 'ПОЧТА'
+        greeting: 'привет',
+        name: 'я - Даня',
+        surname: 'Печинкин.',
+        intro: 'это моё:',
+        dj: 'дидж',
+        resume: 'резюме',
+        youtube: 'ютуб',
+        telegram: 'телеграм',
+        email: 'почта'
     },
     en: {
-        greeting: 'HELLO',
-        name: 'I\'M DANYA',
-        surname: 'PECHINKIN.',
-        intro: 'I HAVE:',
-        dj: 'DIDJ',
-        resume: 'RESUME',
-        youtube: 'YOUTUBE',
-        telegram: 'TELEGRAM',
-        email: 'EMAIL'
+        greeting: 'hi',
+        name: 'i\'m Danya',
+        surname: 'Pechinkin.',
+        intro: 'about me:',
+        dj: 'didj',
+        resume: 'resume',
+        youtube: 'youtube',
+        telegram: 'telegram',
+        email: 'email'
     }
 };
 
@@ -42,11 +42,11 @@ function updateLanguage(lang) {
 
     circleLinks['circle-dev'] = lang === 'ru' ? 'resume_ru.pdf' : 'resume_en.pdf';
 
-    document.querySelector('.lang-btn').textContent = lang === 'ru' ? 'EN' : 'RU';
+    document.querySelector('.lang-btn').textContent = lang === 'ru' ? 'en' : 'ru';
     document.querySelector('.lang-btn').setAttribute('data-lang', lang === 'ru' ? 'en' : 'ru');
 
     document.documentElement.lang = lang;
-    document.title = lang === 'ru' ? 'ДАНЯ ПЕЧИНКИН' : 'DANYA PECHINKIN';
+    document.title = lang === 'ru' ? 'Даня Печинкин' : 'Danya Pechinkin';
 
     localStorage.setItem('language', lang);
 }
