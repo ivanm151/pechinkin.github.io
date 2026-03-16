@@ -1,0 +1,33 @@
+@use '../variables' as *;
+@use '../base/typography' as *;
+@use "sass:color";
+
+
+.image-wrapper {
+  position: relative;
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 14%;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.caption-circle {
+  position: absolute;
+  top: 30%;
+  left: 85%; // справа от картинки
+  transform: translateY(-50%) translateX(20%); // небольшое смещение вправо
+  width: 25vh;   // чуть меньше основных кругов
+  height: 25vh;
+  font-size: 1.2vh;
+  margin-left: 8px;
+  z-index: 2;
+}
