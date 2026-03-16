@@ -1,13 +1,11 @@
 <script setup>
-
+import Obloga from '../components/Obloga.vue'
 </script>
 
 <template>
-<div>
-  VSEM PRIVET
-</div>
+  <Obloga/>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+@use '../assets/styles/components/MainView.scss';
 </style>
