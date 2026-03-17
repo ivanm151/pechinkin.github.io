@@ -25,7 +25,7 @@ defineProps({
       :style="{ backgroundColor: color, ...positionStyle }"
   >
     <p class="circle-text text-h2">
-      {{ text.split('\n').map(line => line.trim()).join(' ') }}
+      {{ text }}
     </p>
   </div>
 </template>

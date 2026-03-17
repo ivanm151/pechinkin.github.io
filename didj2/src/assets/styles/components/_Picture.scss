@@ -2,7 +2,6 @@
 @use '../base/typography' as *;
 @use "sass:color";
 
-
 .image-wrapper {
   position: relative;
   width: 50%;
@@ -11,6 +10,13 @@
   margin-left: 14%;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
 }
 
 .image {
@@ -23,11 +29,19 @@
 .caption-circle {
   position: absolute;
   top: 30%;
-  left: 85%; // справа от картинки
-  transform: translateY(-50%) translateX(20%); // небольшое смещение вправо
-  width: 25vh;   // чуть меньше основных кругов
+  left: 85%;
+  transform: translateY(-50%) translateX(20%);
+  width: 25vh;
   height: 25vh;
   font-size: 1.2vh;
   margin-left: 8px;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 35vw;
+    height: 35vw;
+    font-size: 2.5vw;
+    left: 90%;
+    transform: translateY(-50%) translateX(10%);
+  }
 }

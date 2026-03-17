@@ -2,7 +2,6 @@
 @use '../base/typography' as *;
 @use "sass:color";
 
-
 .text-block {
   width: 100%;
   padding-left: 14%;
@@ -10,6 +9,12 @@
   box-sizing: border-box;
   margin-bottom: 2%;
   line-height: $line-height-normal;
+
+  @media (max-width: 768px) {
+    padding-left: 6%;
+    padding-right: 6%;
+    margin-bottom: 5%;
+  }
 }
 
 .text-mono {
@@ -19,6 +24,11 @@
   color: $text-color-primary;
   line-height: $line-height-normal;
   margin: 0;
-  white-space: pre-line; // Сохраняет переносы строк (\n)
+  white-space: pre-line;
   word-wrap: break-word;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-h2 * 1.1; // Уменьшаем размер шрифта
+    padding: 0 6%;
+  }
 }

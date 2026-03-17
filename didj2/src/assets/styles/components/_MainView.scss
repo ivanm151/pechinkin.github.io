@@ -2,27 +2,82 @@
 @use '../base/typography' as *;
 @use "sass:color";
 
+.obloga {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
 
 .grid-container {
   position: relative;
-  width: 100dvw;
-  height: 100dvh;
-  min-width: 300px;
-  min-height: 200px;
+  width: 100%;
+  max-width: min(95vw, 95vh * 1.54);
+  margin: 20px auto;
   aspect-ratio: 1.54;
-  margin: auto;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-aspect-ratio: 1.54) {
-    width: 100vw;
-    height: auto;
+  // Десктопная версия
+  @media (min-width: 769px) {
+    width: 100dvw;
+    height: 100dvh;
+    min-width: 300px;
+    min-height: 200px;
+    margin: auto;
+    overflow: hidden;
+
+    @media (max-aspect-ratio: 1.54) {
+      width: 100vw;
+      height: auto;
+    }
+    @media (min-aspect-ratio: 1.54) {
+      width: auto;
+      height: 100vh;
+    }
   }
-  @media (min-aspect-ratio: 1.54) {
-    width: auto;
-    height: 100vh;
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.54;
+    margin: 20px 0;
+  }
+}
+
+// Мобильные стили для кругов выносим отдельно
+@media (max-width: 768px) {
+  .circle {
+    width: min(15vw, 15vh) !important;
+    height: min(15vw, 15vh) !important;
+
+    &-text {
+      font-size: clamp(8px, 1.5vw, 16px) !important;
+      line-height: 1.2 !important;
+      white-space: pre-line !important;
+      padding: 2px !important;
+    }
+  }
+}
+
+// Очень маленькие экраны
+@media (max-width: 480px) {
+  .circle {
+    width: min(14vw, 14vh) !important;
+    height: min(14vw, 14vh) !important;
+
+    &-text {
+      font-size: clamp(6px, 1.8vw, 12px) !important;
+    }
   }
 }
 
@@ -32,8 +87,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  pointer-events: none; // чтобы не мешал кликам по кругам
+  pointer-events: none;
   white-space: nowrap;
   margin: 0;
   padding: 0;
+
+  // Мобильная версия для заголовка
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 33%;
+    left: 0;
+    transform: none;
+    z-index: -1;
+    margin: 0;
+    font-size: clamp(24px, 8vw, 48px);
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+  }
 }
